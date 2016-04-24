@@ -22,4 +22,10 @@ void selectionSort(int *array, int length);
 bool bubbleUp(int *array, int length);
 void bubbleSort(int *array, int length);
 
+// Heaps
+bool isMaxHeap(int *array, int length);
+void maxHeapify(int *array, int length, int index);
+void buildMaxHeap(int *array, int length);
+void heapSort(int *array, int length);
+
 #endif

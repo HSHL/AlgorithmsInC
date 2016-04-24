@@ -144,3 +144,23 @@ void bubbleSort(int *array, int length) {
             break;
     }
 }
+
+bool isMaxHeap(int *array, int length) {
+    for (int i=0; i<length/2; i++)
+        if (array[i] < array[i*2+1] || array[i] < array[i*2+2])
+            return false;
+    
+    return true;
+}
+
+void maxHeapify(int *array, int length, int index) {
+    
+}
+
+void buildMaxHeap(int *array, int length) {
+    
+}
+
+void heapSort(int *array, int length) {
+    
+}
