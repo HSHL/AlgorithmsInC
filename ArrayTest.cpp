@@ -41,6 +41,34 @@ void bubbleSort_Test() {
     std::cout << "SUCCESS: execution of Array::bubbleSort succesfull!" << std::endl;
 }
 
+void isMaxHeap_Test() {
+    int a[] = { 4, 2, 1 };
+    assertTrue(isMaxHeap(a, 3), "Array should be maxheap!");
+
+    int b[] = { 1, 4, 2 };
+    assertFalse(isMaxHeap(b, 3), "Array should not be maxheap!");
+    
+    std::cout << "SUCCESS: execution of Array::isMaxHeap succesfull!" << std::endl;
+}
+
+void buildMaxHeap_Test() {
+    
+    
+    std::cout << "SUCCESS: execution of Array::buildMaxheap succesfull!" << std::endl;
+}
+
+void heapSort_Test() {
+    const int count = 1000;
+    int *array = new int[count];
+    fillWithRandomNumbers(array, count, -1000, +1000);
+    assertFalse(isSorted(array, count), "Array should not be sorted!");
+    heapSort(array, count);
+    assertTrue(isSorted(array, count), "Array should be sorted after heapSort!");    
+    delete[] array;
+    
+    std::cout << "SUCCESS: execution of Array::heapSort succesfull!" << std::endl;
+}
+
 void run_all_Array_Tests() {
     srand(time(NULL));
     
@@ -48,5 +76,8 @@ void run_all_Array_Tests() {
     fibonacciContains_Test();
     selectionSort_Test();
     bubbleSort_Test();
+    isMaxHeap_Test();
+    buildMaxHeap_Test();
+    heapSort_Test();
     std::cout << "Execution done!" << std::endl << std::endl;
 }
