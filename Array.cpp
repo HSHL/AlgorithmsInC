@@ -154,13 +154,33 @@ bool isMaxHeap(int *array, int length) {
 }
 
 void maxHeapify(int *array, int length, int index) {
+    int leftIndex = index*2+1;
+    int rightIndex = index*2+2;
+    int maxIndex = index;
     
+    if ((leftIndex < length) && array[leftIndex] > array[index])
+        maxIndex = leftIndex;
+    
+    if ((rightIndex < length) && array[rightIndex] > array[maxIndex])
+        maxIndex = rightIndex;
+    
+    if (maxIndex != index) {
+        swap(array, maxIndex, index);
+        maxHeapify(array, length, maxIndex);
+    }
 }
 
 void buildMaxHeap(int *array, int length) {
-    
+    for (int i=length/2; i>=0; i--)
+        maxHeapify(array, length, i);
 }
 
 void heapSort(int *array, int length) {
-    
+    buildMaxHeap(array, length);
+
+    do {
+        length--;
+        swap(array, 0, length);
+        maxHeapify(array, length, 0);
+    } while (length > 0);
 }

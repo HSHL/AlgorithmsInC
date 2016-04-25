@@ -1,6 +1,7 @@
 #include "ArrayTest.h"
 #include "Array.h"
 #include "UnitTesting.h"
+#include "LinkedList.h"
 #include <cstdlib>
 #include <iostream>
 #include <time.h>
@@ -51,13 +52,31 @@ void isMaxHeap_Test() {
     std::cout << "SUCCESS: execution of Array::isMaxHeap succesfull!" << std::endl;
 }
 
-void buildMaxHeap_Test() {
+void maxHeapify_Test() {
+    int a[] = { 1, 4, 2 };
+    maxHeapify(a, 3, 0);
+    assertTrue(isMaxHeap(a, 3), "Array should be maxheap!");
     
+    std::cout << "SUCCESS: execution of Array::maxHeapify succesfull!" << std::endl;
+}
+
+void buildMaxHeap_Test() {
+    int a[] = { 1, 4, 2 };
+    buildMaxHeap(a, 3);
+    assertTrue(isMaxHeap(a, 3), "Array should be maxheap!");
+    
+    int b[] = { 1, 4, 2, 5, 9 };
+    buildMaxHeap(b, 5);
+    assertTrue(isMaxHeap(b, 3), "Array should be maxheap!");
     
     std::cout << "SUCCESS: execution of Array::buildMaxheap succesfull!" << std::endl;
 }
 
 void heapSort_Test() {
+    int a[] = { 1, 4, 2, 5, 9 };
+    heapSort(a, 5);
+    assertTrue(isSorted(a, 5), "Array should be sorted after heapSort!");
+    
     const int count = 1000;
     int *array = new int[count];
     fillWithRandomNumbers(array, count, -1000, +1000);
@@ -77,6 +96,7 @@ void run_all_Array_Tests() {
     selectionSort_Test();
     bubbleSort_Test();
     isMaxHeap_Test();
+    maxHeapify_Test();
     buildMaxHeap_Test();
     heapSort_Test();
     std::cout << "Execution done!" << std::endl << std::endl;
