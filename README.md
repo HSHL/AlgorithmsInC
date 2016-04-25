@@ -1,5 +1,5 @@
 # AlgorithmsInC
-This project collects some basic data structures and algorithms written in the programming language C. The project was itially inintendet so be used in the lecture "Algorithms and Data Structures" at the university of applied sciences in Hamm.
+This project collects some basic data structures and algorithms written in the programming language C. The project was intially intended so be used in the lecture "Algorithms and Data Structures" at the university of applied sciences in Hamm.
 
 Arrays:
   Search: linear-search, binary-search, self-organizing-search and fibonacci-search
