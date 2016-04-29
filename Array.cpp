@@ -145,6 +145,34 @@ void bubbleSort(int *array, int length) {
     }
 }
 
+int quickSortPartition(int *array, int from, int to) {
+    int pivot = array[to];
+    int left = from;
+    int right = to;
+    
+    do {
+        while (right > from && array[right] >= pivot)
+            right--;
+
+        while (array[left] < pivot)
+            left++;
+        
+        if (left < right)
+            swap(array, left, right);
+    } while (left < right);
+    
+    swap(array, left, to);
+    return left;
+}
+
+void quickSort(int *array, int from, int to) {
+    if (from < to) {
+        int pivotIndex = quickSortPartition(array, from, to);
+        quickSort(array, from, pivotIndex-1);
+        quickSort(array, pivotIndex+1, to);
+    }
+}
+
 bool isMaxHeap(int *array, int length) {
     for (int i=0; i<length/2; i++)
         if (array[i] < array[i*2+1] || array[i] < array[i*2+2])

@@ -21,6 +21,8 @@ bool isSorted(int *array, int length);
 void selectionSort(int *array, int length);
 bool bubbleUp(int *array, int length);
 void bubbleSort(int *array, int length);
+int quickSortPartition(int *array, int from, int to);
+void quickSort(int *array, int from, int to);
 
 // Heaps
 bool isMaxHeap(int *array, int length);
