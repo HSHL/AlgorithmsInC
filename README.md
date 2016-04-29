@@ -3,7 +3,7 @@ This project collects some basic data structures and algorithms written in the p
 
 Arrays:
   Search: linear-search, binary-search, self-organizing-search and fibonacci-search
-  Sorting: selection-sort, bubble-sort and heap-sort
+  Sorting: selection-sort, bubble-sort, quick-sort and heap-sort
 
 Linked-lists:
   Basic functions: push-front, push-back
