@@ -42,6 +42,18 @@ void bubbleSort_Test() {
     std::cout << "SUCCESS: execution of Array::bubbleSort succesfull!" << std::endl;
 }
 
+void quickSort_Test() {
+    const int count = 1000;
+    int *array = new int[count];
+    fillWithRandomNumbers(array, count, -1000, +1000);
+    assertFalse(isSorted(array, count), "Array should not be sorted!");
+    quickSort(array, 0, count);
+    assertTrue(isSorted(array, count), "Array should be sorted after quickSort!");    
+    delete[] array;
+    
+    std::cout << "SUCCESS: execution of Array::quickSort succesfull!" << std::endl;
+}
+
 void isMaxHeap_Test() {
     int a[] = { 4, 2, 1 };
     assertTrue(isMaxHeap(a, 3), "Array should be maxheap!");
@@ -95,6 +107,7 @@ void run_all_Array_Tests() {
     fibonacciContains_Test();
     selectionSort_Test();
     bubbleSort_Test();
+    quickSort_Test();
     isMaxHeap_Test();
     maxHeapify_Test();
     buildMaxHeap_Test();
