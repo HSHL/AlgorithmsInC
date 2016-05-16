@@ -13,7 +13,7 @@ TreeNode *newTreeNode(int value) {
 TreeNode* insert(TreeNode *root, int value) {
     if (root == NULL)
         root = newTreeNode(value);
-    else if (value < root->value)
+    else if (value <= root->value)
         root->left = insert(root->left, value);
     else
         root->right = insert(root->right, value);
