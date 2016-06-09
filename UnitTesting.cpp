@@ -1,4 +1,5 @@
 #include "UnitTesting.h"
+#include <stdlib.h>
 
 void assertTrue(bool a, const char* error) {
     if (!a) {
